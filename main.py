@@ -4,7 +4,10 @@ import re
 import aiohttp
 import os
 from typing import Optional, Dict
+from dotenv import load_dotenv
 
+# Load environment variables from .env file
+load_dotenv()
 
 # Bot setup
 intents = discord.Intents.default()
@@ -215,17 +218,11 @@ async def on_command_error(ctx, error):
 
 
 if __name__ == "__main__":
-    if not DISCORD_TOKEN:
-        print("ERROR: DISCORD_BOT_TOKEN environment variable not set!")
-        print("Please set it with: export DISCORD_BOT_TOKEN='your_token_here'")
-    else:
-        print("Starting Discord Link Safety Bot...")
-        try:
-            bot.run(DISCORD_TOKEN)
-        except discord.errors.PrivilegedIntentsRequired:
-            print(
-                "ERROR: Missing required privileged intents in Discord Developer Portal."
-            )
-            print(
-                "Enable MESSAGE CONTENT INTENT for your bot at https://discord.com/developers/applications"
-            )
+    print("Starting Discord Link Safety Bot...")
+    try:
+        bot.run(DISCORD_TOKEN)
+    except discord.errors.PrivilegedIntentsRequired:
+        print("ERROR: Missing required privileged intents in Discord Developer Portal.")
+        print(
+            "Enable MESSAGE CONTENT INTENT for your bot at https://discord.com/developers/applications"
+        )

@@ -29,5 +29,7 @@ Thumbs.db
 
 #secrets
 .tokens
+.env
+
 
 screenshots/
