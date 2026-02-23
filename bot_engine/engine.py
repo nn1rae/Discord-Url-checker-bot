@@ -24,8 +24,7 @@ intents.dm_messages = True
 bot = commands.Bot(command_prefix="!", intents=intents)
 
 
-
-#setup URL checker
+# setup URL checker
 url_checker = URLChecker(VIRUSTOTAL_API_KEY)
 
 

@@ -27,9 +27,5 @@ Thumbs.db
 # Logs
 *.log
 
-#secrets
-.tokens
-.env
-
 
 screenshots/

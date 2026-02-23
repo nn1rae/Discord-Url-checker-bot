@@ -2,6 +2,7 @@ import asyncio
 import aiohttp
 from typing import Optional, Dict
 
+
 class URLChecker:
     def __init__(self, api_key: Optional[str]):
         self.api_key = api_key
@@ -41,7 +42,9 @@ class URLChecker:
                         if response.status != 200:
                             return {
                                 "safe": True,
-                                "details": {"error": f"Analysis error: {response.status}"},
+                                "details": {
+                                    "error": f"Analysis error: {response.status}"
+                                },
                                 "checked": False,
                             }
 
